@@ -1,0 +1,25 @@
+<div class="container">
+  <article>
+    <h1>Board</h1>
+    <!-- Blog articles -->
+    <ul class="thumbnails">
+      <!-- Blog post -->
+      <% @boards.each do |board| %>
+        <li class="span4">
+          <!-- Blog image -->
+          <%= link_to image_tag("arimura3.jpg"), board_path(board) %>
+            <h2 ><%= link_to board.title, board_path(board) %></h2><br/>
+            <small><%= board.created_at %></small>
+          <!-- Blog post description -->
+          <p class="smallFontBy08"><%= link_to board.body, board_path(board)  %></p>
+
+          <!-- Blog read more -->
+  
+        </li>
+      <% end %>
+    </ul>
+  </article>
+</div>
+<br>
+
+<%= link_to 'New Board', new_board_path %>

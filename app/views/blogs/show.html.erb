@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @blog.user_id %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @blog.image %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @blog.body %>
+</p>
+
+<%= form_for @blog.comments.build do |f| %>
+
+	<%= f.hidden_field :blog_id %>
+
+  <div class="field">
+    <%= f.label :body, "コメント" %>
+    <%= f.text_field :body %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "登録する" %>
+  </div>
+<% end %>
+<% @blog.comments.each do |c| %>
+	<%= c.body %>
+<% end %>
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>

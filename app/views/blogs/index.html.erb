@@ -1,0 +1,59 @@
+<div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Talk with Everyone!</h1>
+
+
+      <!-- Sub menu -->
+      <nav class="submenu">
+        <ul>
+          <li>
+            <a href="./pages/blog/blog.html">All</a>
+          </li>
+          <li>
+            <a href="./pages/blog/blog.html">Technology</a>
+          </li>
+          <li>
+            <a href="./pages/blog/blog.html">Design</a>
+          </li>
+          <li>
+            <a href="./pages/blog/blog.html">Future trends</a>
+          </li>
+          <li>
+            <a href="./pages/blog/blog.html">Other</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- End Header -->
+
+    <!-- Article -->
+    <article>
+      <!-- Blog articles -->
+      <ul class="thumbnails">
+        <!-- Blog post -->
+        <% @blogs.each do |blog| %>
+        <li class="span4">
+          <!-- Blog image -->
+          <a href="./pages/blog/blog_1.html">
+            <img src="http://placehold.it/390x300" alt="Treble">
+          </a>
+            <h2 ><%= link_to blog.title, blog_path(blog) %></h2><br/>
+            <small><%= blog.created_at %></small>
+          <!-- Blog post description -->
+          <p class="smallFontBy08"><%= link_to blog.body, blog_path(blog)  %></p>
+
+          <!-- Blog read more -->
+          <div>
+          	コメント（<%= link_to blog.comments.count, blog_path(blog) %>）
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </article>
+  </div>
+</div>
+
+<%= link_to 'New Blog', new_blog_path %>
+
+<%= link_to 'back', about_index_path %>
