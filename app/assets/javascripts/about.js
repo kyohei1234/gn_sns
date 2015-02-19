@@ -1,4 +1,7 @@
-//= require jquery-1.10.2.min.js
+//= require jquery
+//= require jquery_ujs
+
+
 //= require application/application.js
 //= require bootstrap/bootstrap.js
 //= require plugins/jquery.bxslider
