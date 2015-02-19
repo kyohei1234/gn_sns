@@ -46,11 +46,4 @@ ActiveRecord::Schema.define(version: 20150201172143) do
     t.datetime "updated_at"
   end
 
-  create_table "responses", force: true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
