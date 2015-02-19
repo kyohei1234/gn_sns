@@ -1,0 +1,13 @@
+<h1>Introduction</h1>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= profile_image_for @friend %>
+        <%= @friend.title %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<%= link_to 'Edit', edit_friend_path(@friend) %> |
+<%= link_to '一覧へ', friends_path %>

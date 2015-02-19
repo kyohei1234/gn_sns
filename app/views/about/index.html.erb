@@ -1,0 +1,330 @@
+<!--   <!DOCTYPE html>
+<html lang="en">
+  <head>
+</head>
+<body> -->
+	<!-- NAVIGATION -->
+
+	<!-- END NAVIGATION -->
+
+	<!-- PAGE | WELCOME -->
+	<div class="pages white paralax page-welcome" id="page-welcome">
+		<div class="overlay"></div>
+		<!-- Centralized content -->
+		<div class="centralized">
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span12 center">
+						<!-- Animated logo -->
+						<div class="logo">
+							<div class="scrollNormal">
+								<%= image_tag 'logo_welcome.png', :size => '140x140', :alt => 'Treble' ,id:"page-work"%>
+							</div>
+							<div class="scrollDown">
+								<%= image_tag 'logo2_welcome.png', :size => '140x140', :alt => 'Treble' ,id:"page-work"%>
+							</div> 
+						</div>
+						<div class="line-divider" id="welcome-messages">
+							<ul class="slides">
+								<li>
+									<h1>GLOBAL</h1>
+                  <h1>NEXTLEADERS</h1>
+                  <h1>FORUM</h1>
+                  <small>KNOWLEDGE, EXPERIENCE, AND HUMAN NETWORKS</small>
+                </li>
+                <li>
+                  <h1>Alumni&Alumnae</h1>
+                  <h1>International</h1>
+                  <h1>Community</h1>
+                </li>
+              </ul>
+            </div>
+            <div class="social-icons sicon-white bordered">
+              <%= link_to '#', class: "sicon-facebook" do %>
+              <i>Faceook</i>
+              <% end %>
+              <%= link_to '#', class: "sicon-twitter" do %>
+              <i>Twitter</i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END PAGE | Welcome -->
+  <div class="pages page-about" id="page-friends">
+   <div class="container">
+    <!-- Header -->
+    <header>
+     <h4 class="line-divider">Friends</h4>
+     <h1>Meet Friends</h1>
+     <div class="row">
+      <div class="span8 offset2">
+       <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </div>
+</header>
+<!-- End Header -->
+
+<!-- Article -->
+<article>
+ <!-- List of people and description with their contact details which are visable on hover -->
+ <ul class="thumbnails about-items">
+  <li class="span4 center">
+   <div class="item">
+    <!-- Team member image -->
+    <%= image_tag "arimura3.jpg", class: "img-circle"%>
+
+    <!-- Team memeber details, activated on hover -->
+    <div class="about-overlay img-circle">
+     <div class="social-icons sicon-white">
+      <%= link_to '#', class: "sicon-facebook" do %>
+      <i>Faceook</i>
+      <% end %>
+      <%= link_to '#', class: "sicon-twitter" do %>
+      <i>Twitter</i>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Team member name and function -->
+<h5>
+  Joanna doe<br/>
+  <small>Creative director</small>
+</h5>
+
+<!-- Team member short info -->
+<p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
+</li>
+</ul>
+</article>
+<!-- End Article -->
+</div>
+</div>
+<!-- END PAGE | ABOUT -->
+<!-- More blog posts -->
+<footer>
+ <div class="show-more-cube">
+  <%= link_to friends_path, class: "show-more-cube" do %>
+  <span>All</br>friends</span>
+  <% end %>
+</div>
+</footer>
+
+<!-- PAGE | BLOG -->
+<div class="pages page-blog" id="page-blogs">
+ <div class="container">
+  <!-- Header -->
+  <header>
+   <h4 class="line-divider">Diary</h4>
+   <h1>World Relay Diary</h1>
+ </header>
+ <!-- End Header -->
+
+ <!-- Article -->
+ <article>
+  <!-- Blog articles -->
+  <ul class="thumbnails">
+    <!-- Blog post -->
+    <% @blogs.each do |blog| %>
+    <li class="span4">
+      <!-- Blog image -->
+      <a href="./pages/blog/blog_1.html">
+        <img src="http://placehold.it/390x300" alt="Treble">
+      </a>
+      <h2 ><%= link_to blog.title, blog_path(blog) %></h2><br/>
+      <small><%= blog.created_at %></small>
+      <!-- Blog post description -->
+      <p class="smallFontBy08"><%= link_to blog.body, blog_path(blog)  %></p>
+
+      <!-- Blog read more -->
+      <div>
+        コメント（<%= link_to blog.comments.count, blog_path(blog) %>）
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</article>
+<!-- End Article -->
+
+<!-- Footer -->
+<footer>
+ <!-- More blog posts -->
+ <div class="show-more-cube">
+  <%= link_to blogs_path, class: "show-more-cube" do %>
+  <span>All Blog<br/>Posts</span>
+  <% end %>
+</div>
+</footer>
+<!-- End Footer -->
+</div>
+</div>
+<!-- END PAGE | BLOG -->
+
+
+<!-- PAGE | WORK -->
+<div class="pages page-work" id="page-work">
+ <div class="container">
+  <!-- Header -->
+  <header>
+   <h4 class="line-divider">Forum</h4>
+   <h1>Portfolio</h1>
+   <!-- Short desciption about Work in general -->
+   <div class="row">
+    <div class="span8 offset2">
+     <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+    </p>
+  </div>
+</div>
+
+<!-- Sub menu -->
+                <!-- 
+                Params: 
+                    plugin-filter: Defines links for filtering.
+                  -->
+<!--                   <nav class="submenu">
+                   <ul>
+                    <li>
+                     <a href="#" class="plugin-filter active" data-filter="all">All</a>
+                   </li>
+                   <li>
+                     <a href="#" class="plugin-filter" data-filter="typography">Typography</a>
+                   </li>
+                   <li>
+                     <a href="#" class="plugin-filter" data-filter="illustration">Illustration</a>
+                   </li>
+                   <li>
+                     <a href="#" class="plugin-filter" data-filter="branding">Branding</a>
+                   </li>
+                   <li>
+                     <a href="#" class="plugin-filter" data-filter="photography">Photography</a>
+                   </li>
+                 </ul>
+               </nav> -->
+             </header>
+             <!-- End Header -->
+
+             <!-- Article -->
+
+            <!-- End Article -->
+
+            <!-- Footer -->
+            <footer>
+             <div class="show-more-cube">
+              <a href="#pages/portfolio/readmore.html" data-destination="plugin-filter-elements" data-insert="appendTo" data-action="remove">
+               <span>Show<br/>More</span>
+             </a>
+           </div>
+         </footer>
+         <!-- End footer -->
+       </div>
+     </div>
+     <!-- END PAGE | WORK -->
+
+     <!-- PAGE | CLIENTS -->
+     <div class="pages page-clients" id="page-clients">
+       <div class="container">
+        <h4 class="line-divider-inline center">Satisfied clients</h4>
+        <!-- Client logos -->
+        <div class="row-fluid">
+         <div class="span2 center">
+          <img src="http://placehold.it/180x70" alt="Treble">
+        </div>
+        <div class="span2 center">
+          <img src="http://placehold.it/180x70" alt="Treble">
+        </div>
+        <div class="span2 center">
+          <img src="http://placehold.it/180x70" alt="Treble">
+        </div>
+        <div class="span2 center">
+          <img src="http://placehold.it/180x70" alt="Treble">
+        </div>
+        <div class="span2 center">
+          <img src="http://placehold.it/180x70" alt="Treble">
+        </div>
+        <div class="span2 center">
+          <img src="http://placehold.it/180x70" alt="Treble">
+        </div>
+      </div>
+      <!-- Short text related to client's -->
+      <div class="row-fluid">
+       <div class="span8 offset2 center smallFontBy08">
+        <p>
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+       </p>
+     </div>
+   </div>
+ </div>
+</div>
+<!-- END PAGE | CLIENTS -->
+
+
+
+<!-- PAGE | ABOUT -->
+
+<!-- Board -->
+<div class="pages page-blog" id="page-boards">
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h4 class="line-divider">Board</h4>
+      <h1>Talk with Everyone!</h1>
+<!--         <div class="row">
+          <div class="span8 offset2">
+            <div class="input-append">
+              <input class="span5" id="appendedInputButton" type="text" placeholder="Search Blog">
+              <button class="btn btn-primary sicon-search sicon-white" type="button"><i>Search</i></button>
+            </div>
+          </div>
+        </div>
+      -->
+      <!-- Sub menu -->
+<!--         <nav class="submenu">
+          <ul>
+            <li>
+              <a href="./pages/blog/blog.html">All</a>
+            </li>
+            <li>
+              <a href="./pages/blog/blog.html">Technology</a>
+            </li>
+            <li>
+              <a href="./pages/blog/blog.html">Design</a>
+            </li>
+            <li>
+              <a href="./pages/blog/blog.html">Future trends</a>
+            </li>
+            <li>
+              <a href="./pages/blog/blog.html">Photography</a>
+            </li>
+            <li>
+              <a href="./pages/blog/blog.html">Other</a>
+            </li>
+          </ul>
+        </nav> -->
+      </header>
+      <!-- End Header -->
+
+      <!-- Article -->
+
+    </div>
+    <!-- End Article -->
+
+    <!-- Footer -->
+    <footer>
+      <!-- More blog posts -->
+      <div class="show-more-cube">
+        <%= link_to boards_path, class: "show-more-cube" do %>
+        <span>Let's</br>Talk!</span>
+        <% end %>
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </div>
+</div>
+
+

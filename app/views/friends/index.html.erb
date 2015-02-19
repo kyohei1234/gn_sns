@@ -1,0 +1,8 @@
+<h1>Friends</h1>
+
+  <% @friends.each do |friend| %>
+  <%= profile_image_for friend %>
+  <%= link_to friend.title, friend %>
+<% end %>
+
+<%= link_to 'New Friend', new_friend_path %>

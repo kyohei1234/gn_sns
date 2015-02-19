@@ -24,7 +24,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
-gem 'bootstrap-sass', '2.3.2.0'
+# gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 # has_secure_password用
 gem 'bcrypt-ruby', '3.1.2'
@@ -33,6 +33,9 @@ gem 'faker', '1.1.2'
 # ページネーション用
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+gem 'better_errors'
+# ブラウザ上でデバッグ
+gem 'binding_of_caller'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
