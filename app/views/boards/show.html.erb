@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Contents:</strong>
   <%= @board.body %>
 </p>
 
@@ -27,11 +27,12 @@
     <%= f.submit "登録する" %>
   </div>
 <% end %>
-<div>
+<div class="content_wrapper">
+  <% i = 0 %>
   <% @board.opinions.each do |b| %>
-    <%= b.name %>
-  	<%= b.body %>
-    <%= b.created_at %>
+    <p><%= b.name %></p>
+    <p><%= b.created_at %></p>
+  	<div class="board_opinion"><%= i += 1 %>  <%= b.body %></div>
   <% end %>
 </div>
 <%= link_to 'Edit', edit_board_path(@board) %> |
