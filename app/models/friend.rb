@@ -6,5 +6,6 @@ class Friend < ActiveRecord::Base
       self.image = file_name
     end
   end
+  has_many :responses
 end
 

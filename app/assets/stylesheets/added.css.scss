@@ -15,14 +15,121 @@
 
 // board
 
+.main_container{
+	text-align: center;
+}
+
+.information_container
+{
+	display: inline-block;;
+	height: 50px; 
+	margin-top: 10px 
+}
+
+.information_container p{
+	margin: 10px 20px
+}
+
 .content_wrapper{
-	text-align: center
+	text-align: center;
+	width:50%;
+	margin: auto
+}
+
+.opinion_number{
+	float: left;
+	margin: 5px 20px
 }
 
 .content_wrapper p {
-	margin: 20px 40px;
+	margin: 10px 20px;
 }
 
 .board_opinion{
 	clear: both;
+	width: 80%;
+	margin:auto;
+	width: 80%;
+	margin-bottom:10px;
+	padding: 10px;
+	border-bottom: 1px dashed #000
 }
+
+.opinions_box{
+	border-style: solid;
+    border-width: 1px;
+    border-color: #000080;
+    width: 50%;
+    text-align: center;
+    margin: auto
+}
+
+.opinion_created_time
+{
+	// float: left
+	display: inline-block;
+}
+
+.opinion_name{
+	display: inline-block;
+}
+
+hr{
+	padding : 0
+}
+
+// blogs
+.comments_box{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000080;
+    width: 50%;
+    text-align: center;
+    margin: auto
+}
+
+.posted_comments{
+	text-align: center;
+	margin-bottom: 20px; 
+}
+
+.posted_comments p{
+	margin:auto;
+	width: 80%;
+	margin-bottom:10px;
+
+	padding: 10px;
+	border-bottom: 1px dashed #000
+} 
+
+// friends
+
+.responses_box{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000080;
+    width: 50%;
+    text-align: center;
+    margin: auto
+}
+
+.posted_responses{
+	text-align: center;
+	margin-bottom: 20px; 
+}
+
+.posted_responses p{
+	margin:auto;
+	width: 80%;
+	margin-bottom:10px;
+	text-align: center;
+	padding: 10px;
+	border-bottom: 1px dashed #000
+} 
+
+.span4 section p{
+	text-align: center
+}
+
+
+

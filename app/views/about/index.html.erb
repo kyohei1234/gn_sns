@@ -18,7 +18,7 @@
 						<!-- Animated logo -->
 						<div class="logo">
 							<div class="scrollNormal">
-								<%= image_tag 'logo_welcome.png', :size => '140x140', :alt => 'Treble' ,id:"page-work"%>
+								<%= image_tag 'logo_welcome.png', :size => '140x140', :alt => 'Treble' ,id:"page-friends"%>
 							</div>
 							<div class="scrollDown">
 								<%= image_tag 'logo2_welcome.png', :size => '140x140', :alt => 'Treble' ,id:"page-friends"%>
@@ -52,8 +52,9 @@
       </div>
     </div>
   </div>
+
   <!-- END PAGE | Welcome -->
-  <div class="pages page-about" id="page-friends">
+  <div class="pages page-friends" id="page-friends">
    <div class="container">
     <!-- Header -->
     <header>
@@ -68,15 +69,15 @@
   </div>
 </header>
 <!-- End Header -->
-
 <!-- Article -->
 <article>
  <!-- List of people and description with their contact details which are visable on hover -->
  <ul class="thumbnails about-items">
-  <li class="span4 center">
+  <% @friends.each do |friend| %>
+  <li class="span4">
    <div class="item">
     <!-- Team member image -->
-    <%= image_tag "arimura3.jpg", class: "img-circle"%>
+<%= profile_image_for friend, class: "img-circle" %>
 
     <!-- Team memeber details, activated on hover -->
     <div class="about-overlay img-circle">
@@ -90,15 +91,13 @@
     </div>
   </div>
 </div>
-
 <!-- Team member name and function -->
 <h5>
-  Joanna doe<br/>
-  <small>Creative director</small>
+  <%= link_to friend.title, friend %><br/>
 </h5>
+<% end %>
 
 <!-- Team member short info -->
-<p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
 </li>
 </ul>
 </article>
@@ -167,18 +166,16 @@
 
 
 <!-- PAGE | WORK -->
-<div class="pages page-work" id="page-work">
+<div class="pages page-work" id="page-sponsors">
  <div class="container">
   <!-- Header -->
   <header>
-   <h4 class="line-divider">Forum</h4>
-   <h1>Portfolio</h1>
+   <h4 class="line-divider">Sponsors</h4>
    <!-- Short desciption about Work in general -->
    <div class="row">
     <div class="span8 offset2">
-     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-    </p>
+      <%= image_tag('gnlf002.jpg', "width"=>"300", "height"=>"80") %>
+
   </div>
 </div>
 
@@ -214,24 +211,24 @@
             <!-- End Article -->
 
             <!-- Footer -->
-            <footer>
+<!--             <footer>
              <div class="show-more-cube">
               <a href="#pages/portfolio/readmore.html" data-destination="plugin-filter-elements" data-insert="appendTo" data-action="remove">
                <span>Show<br/>More</span>
              </a>
            </div>
-         </footer>
+         </footer> -->
          <!-- End footer -->
        </div>
      </div>
      <!-- END PAGE | WORK -->
 
      <!-- PAGE | CLIENTS -->
-     <div class="pages page-clients" id="page-clients">
+<!--      <div class="pages page-clients" id="page-clients">
        <div class="container">
-        <h4 class="line-divider-inline center">Satisfied clients</h4>
+        <h4 class="line-divider-inline center">Satisfied clients</h4> -->
         <!-- Client logos -->
-        <div class="row-fluid">
+        <!-- <div class="row-fluid">
          <div class="span2 center">
           <img src="http://placehold.it/180x70" alt="Treble">
         </div>
@@ -250,9 +247,9 @@
         <div class="span2 center">
           <img src="http://placehold.it/180x70" alt="Treble">
         </div>
-      </div>
+      </div> -->
       <!-- Short text related to client's -->
-      <div class="row-fluid">
+      <!-- <div class="row-fluid">
        <div class="span8 offset2 center smallFontBy08">
         <p>
          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -260,7 +257,7 @@
      </div>
    </div>
  </div>
-</div>
+</div> -->
 <!-- END PAGE | CLIENTS -->
 
 
