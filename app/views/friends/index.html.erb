@@ -1,8 +1,36 @@
-<h1>Friends</h1>
+<p>Friends</p>
 
+<article>
+ <!-- List of people and description with their contact details which are visable on hover -->
+ <ul class="thumbnails about-items">
   <% @friends.each do |friend| %>
-  <%= profile_image_for friend %>
-  <%= link_to friend.title, friend %>
+  <li class="span4">
+   <div class="item">
+    <!-- Team member image -->
+<%= profile_image_for friend, class: "img-circle" %>
+
+    <!-- Team memeber details, activated on hover -->
+    <div class="about-overlay img-circle">
+     <div class="social-icons sicon-white">
+      <%= link_to '#', class: "sicon-facebook" do %>
+      <i>Faceook</i>
+      <% end %>
+      <%= link_to '#', class: "sicon-twitter" do %>
+      <i>Twitter</i>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- Team member name and function -->
+<h5>
+  <%= link_to friend.title, friend %><br/>
+</h5>
 <% end %>
 
+<!-- Team member short info -->
+</li>
+</ul>
+</article>
+
 <%= link_to 'New Friend', new_friend_path %>
+<%= link_to "Top", root_path %>

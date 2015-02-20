@@ -1,5 +1,6 @@
 class AboutController < ApplicationController
 	def index
-    @blogs = Blog.all
+    @blogs = Blog.limit(3)
+    @friends=Friend.limit(3)
   end
 end

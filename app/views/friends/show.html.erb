@@ -1,13 +1,44 @@
-<h1>Introduction</h1>
+<p>Friends</p>
+<div class="main_container">
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
+      <p>
         <%= profile_image_for @friend %>
         <%= @friend.title %>
-      </h1>
+      </p>
     </section>
   </aside>
+</div>
+
+<div class="responses_box">
+<div class="posted_responses">
+<% @friend.responses.each do |r| %>
+	<p><%= r.title %></p>
+	<p><%= r.body %></p>
+<% end %>
+</div>
+<div class="content_wrapper">
+<%= form_for @friend.responses.build do |r| %>
+
+	<%= r.hidden_field :friend_id %>
+
+	<div class="field">
+    <%= r.label :title, "Title" %>
+    <%= r.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= r.label :body, "Resopnse" %>
+    <%= r.text_field :body %>
+  </div>
+  
+  <div class="actions">
+    <%= r.submit "登録する" %>
+  </div>
+<% end %>
+</div>
+</div>
 </div>
 <%= link_to 'Edit', edit_friend_path(@friend) %> |
 <%= link_to '一覧へ', friends_path %>
