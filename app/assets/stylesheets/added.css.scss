@@ -103,7 +103,22 @@ hr{
 } 
 
 // friends
+.friend_aside{
+	margin: 0 !important;
+	padding: 0
+}
+.friend_title
+{
+	text-align: center;
+	font-size: 40px;
+	margin-top: 30px 
+}
 
+.friend_image{
+	text-align: center;
+	margin: auto;
+	padding-bottom: 10px
+}
 .responses_box{
     border-style: solid;
     border-width: 1px;
@@ -130,6 +145,25 @@ hr{
 .span4 section p{
 	text-align: center
 }
+
+.friend_section{
+	text-align: center;
+}
+
+.row_friend{
+	display: inline-block;
+	margin: 0
+}
+
+.friend_name{
+	margin: auto;
+	margin: 50px 20px;
+	font-size: 40px
+}
+
+
+
+
 
 
 

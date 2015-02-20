@@ -1,11 +1,11 @@
-<p>Friends</p>
+<p class="friend_title">Friends</p>
 <div class="main_container">
-<div class="row">
-  <aside class="span4">
-    <section>
+<div class="row_friend">
+  <aside class="span4 friend_aside">
+    <section class="friend_section">
       <p>
-        <%= profile_image_for @friend %>
-        <%= @friend.title %>
+        <%= profile_image_for @friend, class: "friend_image" %>
+        <p class="friend_name"><%= @friend.title %></p>
       </p>
     </section>
   </aside>
