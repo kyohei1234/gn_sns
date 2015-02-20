@@ -15,7 +15,7 @@
 
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="assets/bootstrap.css" type="text/css" />
-
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <!-- GOOGLE WEB FONTS -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 </head>
@@ -29,7 +29,7 @@
           <!-- END LOGO -->
 
           <div class="header_logo">
-            <%= link_to image_tag('gnlf_png.png', "width"=>"78", "height"=>"26"), :action => "index" %>
+            <%= link_to image_tag('gnlf_png.png', "width"=>"78", "height"=>"26"), root_path %>
 
           </div>
 
@@ -59,8 +59,10 @@
 
                       <!-- SOCIAL ICONS -->
                       <div class="social-icons hover-big pull-right">
-                        <%= link_to "" ,"https://www.facebook.com/groups/151692711639352/", class: "sicon-facebook" %><i>Facebook</i>
-                        <%= link_to "" ,"" , class: "sicon-twitter" %><i>Twitter</i></a>
+                        <%= link_to "https://www.facebook.com/groups/151692711639352/" do %>
+                          <i class="fa fa-facebook-official fa-3"></i>
+                        <% end %>
+                        <%= link_to "#" do %><i class="fa fa-twitter"></i><% end %>
                       </div>
                       <!-- END SOCIAL ICONS -->
                     </div>
@@ -68,12 +70,18 @@
                 </div>
               </nav>
               <!-- END NAVIGATION -->
-
+              <% if notice %>
+                <p class="alert alert-success"><%= notice %></p>
+              <% end %>
+              <% if alert %>
+                <p class="alert alert-danger"><%= alert %></p>
+              <% end %>
               <%= yield %>
 
               <!-- PAGE | CONTACT -->
               <div class="pages black-bg white page-contact" id="page-contact">
                 <div class="container">
+                 
                   <!-- Header -->
                   <header>
                     <h4 class="line-divider">Contact</h4>

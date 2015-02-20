@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root  'about#index'
   resources :boards
-
   get "about/index"
 
   
