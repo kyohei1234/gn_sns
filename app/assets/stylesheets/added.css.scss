@@ -12,3 +12,159 @@
 #main-menu li a{
   color: #fff !important;
 }
+
+// board
+
+.main_container{
+	text-align: center;
+}
+
+.information_container
+{
+	display: inline-block;;
+	height: 50px; 
+	margin-top: 10px 
+}
+
+.information_container p{
+	margin: 10px 20px
+}
+
+.content_wrapper{
+	text-align: center;
+	width:50%;
+	margin: auto
+}
+
+.opinion_number{
+	float: left;
+	margin: 5px 20px
+}
+
+.content_wrapper p {
+	margin: 10px 20px;
+}
+
+.board_opinion{
+	clear: both;
+	width: 80%;
+	margin:auto;
+	width: 80%;
+	margin-bottom:10px;
+	padding: 10px;
+	border-bottom: 1px dashed #000
+}
+
+.opinions_box{
+	border-style: solid;
+    border-width: 1px;
+    border-color: #000080;
+    width: 50%;
+    text-align: center;
+    margin: auto
+}
+
+.opinion_created_time
+{
+	// float: left
+	display: inline-block;
+}
+
+.opinion_name{
+	display: inline-block;
+}
+
+hr{
+	padding : 0
+}
+
+// blogs
+.comments_box{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000080;
+    width: 50%;
+    text-align: center;
+    margin: auto
+}
+
+.posted_comments{
+	text-align: center;
+	margin-bottom: 20px; 
+}
+
+.posted_comments p{
+	margin:auto;
+	width: 80%;
+	margin-bottom:10px;
+
+	padding: 10px;
+	border-bottom: 1px dashed #000
+} 
+
+// friends
+.friend_aside{
+	margin: 0 !important;
+	padding: 0
+}
+.friend_title
+{
+	text-align: center;
+	font-size: 40px;
+	margin-top: 30px 
+}
+
+.friend_image{
+	text-align: center;
+	margin: auto;
+	padding-bottom: 10px
+}
+.responses_box{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000080;
+    width: 50%;
+    text-align: center;
+    margin: auto
+}
+
+.posted_responses{
+	text-align: center;
+	margin-bottom: 20px; 
+}
+
+.posted_responses p{
+	margin:auto;
+	width: 80%;
+	margin-bottom:10px;
+	text-align: center;
+	padding: 10px;
+	border-bottom: 1px dashed #000
+} 
+
+.span4 section p{
+	text-align: center
+}
+
+.font-awesome{
+	color: white;
+	width: 25px;
+	height: 25px;
+}
+
+.friend_section{
+	text-align: center;
+}
+
+.row_friend{
+	display: inline-block;
+	margin: 0
+}
+
+.friend_name{
+	margin: auto;
+	margin: 50px 20px;
+	font-size: 40px
+}
+
+

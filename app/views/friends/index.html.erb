@@ -1,8 +1,15 @@
-<h1>Friends</h1>
+<div class="container">
+<p class="friend_title">Friends</p>
 
-  <% @friends.each do |friend| %>
-  <%= profile_image_for friend %>
-  <%= link_to friend.title, friend %>
-<% end %>
+  <article>
+   <!-- List of people and description with their contact details which are visable on hover -->
+   <div class="page-about">
+    <ul class="thumbnails about-items">
+       <%= render @friends %>
+  <!-- Team member short info -->
+    </ul>
+  </div>
+  </article>
 
 <%= link_to 'New Friend', new_friend_path %>
+<%= link_to "Top", root_path %>
