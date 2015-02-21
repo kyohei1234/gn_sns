@@ -1,11 +1,14 @@
-<p>Friends</p>
+<div class="container">
+<p class="friend_title">Friends</p>
 
   <article>
    <!-- List of people and description with their contact details which are visable on hover -->
+   <div class="page-about">
     <ul class="thumbnails about-items">
        <%= render @friends %>
   <!-- Team member short info -->
     </ul>
+  </div>
   </article>
 
 <%= link_to 'New Friend', new_friend_path %>
