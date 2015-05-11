@@ -1,7 +1,7 @@
 <li class="span4">
   <!-- Blog image -->
   <a href="./pages/blog/blog_1.html">
-    <img src="http://placehold.it/390x300" alt="Treble">
+    <%= blog_image_for blog %>
   </a>
   <h2 ><%= link_to blog.title, blog_path(blog) %></h2><br/>
   <small><%= blog.created_at %></small>

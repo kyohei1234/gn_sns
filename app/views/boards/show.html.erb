@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class="main_container">
+  <div class = "board_image">
+    <%= board_image_for @board %>
+  </div>
   <p>
     <strong>Title:</strong>
     <%= @board.title %>
@@ -9,7 +12,6 @@
     <%= @board.body %>
   </p>
 </div>
-<hr>
 <div class="opinions_box">
   <div class="posted_opinions">
     <% i = 0 %>
