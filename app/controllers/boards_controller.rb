@@ -15,7 +15,8 @@ class BoardsController < ApplicationController
 
   # GET /boards/new
   def new
-    @board = Board.new
+    @user = current_user
+    # @board = Board.new
   end
 
   # GET /boards/1/edit
@@ -26,16 +27,10 @@ class BoardsController < ApplicationController
   # POST /boards.json
   def create
     @board = Board.new(board_params)
-
-    respond_to do |format|
-      if @board.save
-        format.html { redirect_to @board, notice: 'Board was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @board }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @board.errors, status: :unprocessable_entity }
-      end
-    end
+    file = params[:board][:image]
+    @board.set_image(file)
+    @board.save
+    redirect_to @board
   end
 
   # PATCH/PUT /boards/1

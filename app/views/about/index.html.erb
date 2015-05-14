@@ -179,7 +179,7 @@
                    </li>
                  </ul>
                </nav> -->
-             </header>
+             <!-- </header> -->
              <!-- End Header -->
 
              <!-- Article -->
@@ -241,12 +241,45 @@
 <!-- PAGE | ABOUT -->
 
 <!-- Board -->
-<div class="pages page-blog" id="page-boards">
+<!-- PAGE | BLOG -->
+<div class="pages page-blog" id="page-blogs">
   <div class="container">
-    <!-- Header -->
+  <!-- Header -->
     <header>
+      <h4 class="line-divider">Boards</h4>
+      <h1>Discuss with everyone</h1>
+    </header>
+ <!-- End Header -->
+
+ <!-- Article -->
+    <article>
+      <!-- Blog articles -->
+      <ul class="thumbnails">
+        <!-- Blog post -->
+          <%= render @boards %>
+      </ul>
+    </article>
+<!-- End Article -->
+
+<!-- Footer -->
+    <footer>
+     <!-- More blog posts -->
+      <div class="show-more-cube">
+        <%= link_to boards_path, class: "show-more-cube" do %>
+         <span>Let's<br/>Talk</span>
+        <% end %>
+      </div>
+    </footer>
+<!-- End Footer -->
+  </div>
+</div>
+<!-- END PAGE | BLOG -->
+<!-- <div class="pages page-blog" id="page-boards">
+  <div class="container"> -->
+    <!-- Header -->
+    <!-- <header>
       <h4 class="line-divider">Board</h4>
-      <h1>Talk with Everyone!</h1>
+      <h1>Talk with Everyone!</h1> -->
 <!--         <div class="row">
           <div class="span8 offset2">
             <div class="input-append">
@@ -279,25 +312,10 @@
             </li>
           </ul>
         </nav> -->
-      </header>
       <!-- End Header -->
 
       <!-- Article -->
 
-    </div>
     <!-- End Article -->
-
-    <!-- Footer -->
-    <footer>
-      <!-- More blog posts -->
-      <div class="show-more-cube">
-        <%= link_to boards_path, class: "show-more-cube" do %>
-        <span>Let's</br>Talk!</span>
-        <% end %>
-      </div>
-    </footer>
-    <!-- End Footer -->
-  </div>
-</div>
 
 

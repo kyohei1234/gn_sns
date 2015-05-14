@@ -25,30 +25,24 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
-
-    respond_to do |format|
-      if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @blog }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
-      end
-    end
+    blog = Blog.new(blog_params)
+    file = params[:blog][:image]
+    @blog.set_image(file)
+    @blog.save
+    redirect_to @blog
   end
 
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    respond_to do |format|
-      if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
-      end
+    @blog = Blog.find(params[:id])
+    file = params[:blog][:image]
+    @blog.set_image(file)
+    if @blog.update(blog_params)
+      flash[:success] = "Mypage updated"
+      redirect_to @blog
+    else 
+      render 'edit'
     end
   end
 
@@ -70,6 +64,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :user_id, :image, :body)
+      params.require(:blog).permit(:title, :user_id, :body)
     end
 end

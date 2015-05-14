@@ -1,0 +1,13 @@
+<div class="col-xs-4 col-sm-4 col-md-4">
+  <div class="board-item">
+    <!-- Blog image -->
+    <%= link_to board_path(board) do %>
+      <%= board_image_for board %>
+    <% end %>
+    <h5><%= link_to board.title, board_path(board) %></h5><br/>
+    <small><%= board.created_at %></small>
+    <!-- Blog post description -->
+    <p class="smallFontBy08"><%= link_to board.body, board_path(board)  %></p>
+    <!-- Blog read more -->
+  </div>
+</div>

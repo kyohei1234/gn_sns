@@ -1,5 +1,5 @@
 module FriendsHelper
-  	def profile_image_for(friend, size = '52')
-    	image_tag "/docs/#{friend.image}", size: size, class: "img-circle"
-  	end
+	def friend_image_for(friend, size = '390')
+  	image_tag "/docs/friends/#{friend.image}", size: size, class: "img-circle"
+	end
 end
