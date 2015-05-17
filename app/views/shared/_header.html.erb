@@ -1,0 +1,37 @@
+<nav class="fixed-top" id="navigation">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span12 center">
+        <!-- END LOGO -->
+        <div class="header_logo">
+          <%= link_to image_tag('landing/gnlf_png.png', "width"=>"78", "height"=>"26"), root_path %>
+        </div>
+        <!-- MOBILE MENU BUTTON -->
+        <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </div>
+        <!-- END MOBILE MENU BUTTON -->
+        <!-- MAIN MENU -->
+        <ul id="main-menu" class="nav-collapse collapse">
+          <li><%= link_to "Home", "#page-welcome" %></li>
+          <li><%= link_to "Friends","#page-friends" %></li>
+          <li><%= link_to "Blogs","#page-blogs" %></li>
+          <li><%= link_to "Sponsors","#page-sponsors" %></li>
+          <li><%= link_to "Boards","#page-boards" %></li>
+          <li><%= link_to "Information","#page-information" %></li>
+        </ul>
+        <!-- END MAIN MENU -->
+        <!-- SOCIAL ICONS -->
+        <div class="social-icons hover-big pull-right">
+          <%= link_to "https://www.facebook.com/groups/151692711639352/" do %>
+            <i class="fa fa-facebook-official fa-5"></i>
+          <% end %>
+          <%= link_to "#" do %><i class="fa fa-twitter"></i><% end %>
+        </div>
+        <!-- END SOCIAL ICONS -->
+      </div>
+    </div>
+  </div>
+</nav>

@@ -178,7 +178,7 @@ $(document).ready(function(){
     });
     
     $('#twitterfeed-slider').tweetCarousel({
-        interval: 7000,
+        interval: 5000,
         pause: "hover"
     });
 });
