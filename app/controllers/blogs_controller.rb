@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    blog = Blog.new(blog_params)
+    @blog = Blog.new(blog_params)
     file = params[:blog][:image]
     @blog.set_image(file)
     @blog.save
