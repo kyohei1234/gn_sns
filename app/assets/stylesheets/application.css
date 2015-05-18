@@ -10,18 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
+.header_logo{
+  float: left;
+  margin-top:5px
+}
 
 .page-welcome {
   width: 100%;
   height: 100%;
+  height: 785px;
   position: relative;
   overflow: hidden;
   text-align: center;
-  background: #292929 url(../images/pages/welcome/welcome2.jpg) 50% 0 repeat fixed;
+  background: #292929 url("landing/6H.png") 100% 0 repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -244,6 +248,12 @@
   background-color: #4e808e;
 }
 
+.navigation-display{
+  top: 0px;
+  opacity: 1;
+}
+
+
 /*
 *   PAGE | WORK
 */.portfolio-items {
@@ -377,7 +387,7 @@
 *   PAGE | FEATURES
 */.page-features {
   position: relative;
-  background: url(../images/pages/features/q_bck.jpg) 50% 0 no-repeat fixed;
+  background: url(pages/features/q_bck.jpg) 50% 0 no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -409,7 +419,7 @@
   display: inline-block;
 }
 .page-features .quote {
-  background: url(../images/css/divider_q.png) no-repeat 50% 0;
+  background: url(css/divider_q.png) no-repeat 50% 0;
   margin-top: 100px;
   padding-top: 50px;
 }
@@ -469,7 +479,7 @@
 */
 .page-twitter {
   position: relative;
-  background: url(../images/pages/twitter/tw_bck.jpg) 50% 0 no-repeat fixed;
+  background: url(pages/boards/tw_bck.jpg) 50% 0 no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -482,7 +492,7 @@
   position: relative;
 }
 .page-twitter .twitter-devider {
-  background: url(../images/css/divider_tw.png) no-repeat center bottom;
+  background: url(css/divider_q.png) no-repeat center bottom;
   padding-bottom: 60px;
 }
 .page-twitter .twitterfeed {
@@ -828,7 +838,7 @@ footer {
 }
 .bx-wrapper .bx-loading {
   min-height: 50px;
-  background: url(../images/css/plugins/bxslider/bx_loader.gif) center center no-repeat #ffffff;
+  background: url(css/plugins/bxslider/bx_loader.gif) center center no-repeat #ffffff;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -868,11 +878,11 @@ footer {
 }
 .bx-wrapper .bx-prev {
   left: 10px;
-  background: url(../images/css/plugins/bxslider/controls.png) no-repeat 0 -32px;
+  background: url(css/plugins/bxslider/controls.png) no-repeat 0 -32px;
 }
 .bx-wrapper .bx-next {
   right: 10px;
-  background: url(../images/css/plugins/bxslider/controls.png) no-repeat -43px -32px;
+  background: url(css/plugins/bxslider/controls.png) no-repeat -43px -32px;
 }
 .bx-wrapper .bx-prev:hover {
   background-position: 0 0;
@@ -962,16 +972,16 @@ footer {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../images/css/sicon-set.png");
+  background-image: url("css/sicon-set.png");
   background-repeat: no-repeat;
   text-indent: -99999px;
   text-align: center;
 }
 .sicon-white i {
-  background-image: url("../images/css/sicon-set-white.png");
+  background-image: url("css/sicon-set-white.png");
 }
 .sicon-black i {
-  background-image: url("../images/css/sicon-set.png");
+  background-image: url("css/sicon-set.png");
 }
 /*
 *   Social icons configuration
@@ -1025,7 +1035,7 @@ footer {
   background-color: #ffffff;
 }
 .social-icons.bordered a:hover i {
-  background-image: url("../images/css/sicon-set.png");
+  background-image: url("css/sicon-set.png");
 }
 .social-icons.bordered-black {
   border-right: 2px solid #292929;
@@ -1038,7 +1048,7 @@ footer {
   background-color: #292929;
 }
 .social-icons.bordered-black a:hover i {
-  background-image: url("../images/css/sicon-set-white.png");
+  background-image: url("css/sicon-set-white.png");
 }
 /*
 *   Big social icons with hover background
@@ -1059,7 +1069,7 @@ footer {
   transition: all 0.3s ease-in-out;
 }
 .social-icons.hover-big a:hover i {
-  background-image: url("../images/css/sicon-set-white.png");
+  background-image: url("css/sicon-set-white.png");
 }
 .social-icons.hover-big .sicon-facebook:hover {
   background-color: #3b5998;
@@ -1095,10 +1105,9 @@ footer {
 *   Fixed elements, top or bottom.
 */
 .fixed-top {
-  /*position fixedは位置固定+スクロールしても位置が変わらない。*/
   position: fixed;
   top: 0px;
-  opacity: 0;
+  opacity: 1;
   filter: alpha(opacity=0);
 }
 .fixed-bottom {
@@ -1150,7 +1159,7 @@ footer {
 *   Show more cube
 */
 .show-more-cube {
-  background: url("../images/css/divider_more.png") no-repeat center center;
+  background: url("css/divider_more.png") no-repeat center center;
   display: block;
   width: 630px;
   text-align: center;
@@ -1193,7 +1202,7 @@ footer {
 *   Divider for Heading lines
 */
 .line-divider:after {
-  background: url("../images/css/divider.png") no-repeat bottom center;
+  background: url("images/css/divider.png") no-repeat bottom center;
   padding-bottom: 12px;
   display: block;
   height: 10px;
@@ -1204,7 +1213,7 @@ footer {
   margin: auto auto 24px;
 }
 .line-divider-inline:after {
-  background: url("../images/css/divider_more_text.png") no-repeat bottom center;
+  background: url("images/css/divider_more_text.png") no-repeat bottom center;
   padding-bottom: 0px;
   display: block;
   height: 10px;
@@ -7811,4 +7820,3 @@ a.badge:focus {
     overflow: visible !important;
   }
 }
-
