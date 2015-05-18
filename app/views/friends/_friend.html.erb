@@ -1,22 +1,22 @@
-<div class="span4">
+<li class="span4 center">
   <div class="item">
-    <!-- Team member image -->
-    <%= friend_image_for friend, 200 %>
-    <div></div>
-    <!-- Team memeber details, activated on hover -->
+    <!-- Blog image -->
+    <%= friend_image_for friend %>
     <div class="about-overlay img-circle">
-     <div class="social-icons sicon-white">
+      <div class="social-icons sicon-white">
         <%= link_to '#', class: "sicon-facebook" do %>
           <i>Faceook</i>
         <% end %>
         <%= link_to '#', class: "sicon-twitter" do %>
           <i>Twitter</i>
         <% end %>
-     </div>
+      </div>
     </div>
   </div>
   <!-- Team member name and function -->
-  <h5>
-    <%= link_to friend.title, friend %><br/>
+  <h5><%= link_to friend.title, friend_path(friend) %><br/>
+    <% if friend.user %>
+      <small>Posted By Admin, Written By <%= friend.user.username %></small>
+    <% end %>
   </h5>
-</div>
+</li>

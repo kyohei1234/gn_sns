@@ -2,9 +2,8 @@ class CommentsController < ApplicationController
 	
 	def create
 	  @comment = Comment.new(comment_params)
-	  @blog = Blog.new
 	  if @comment.save
-	    redirect_to @blog
+	    redirect_to blog_path(comment_params[:blog_id])
 	  else
 	    render 'new'
 	  end

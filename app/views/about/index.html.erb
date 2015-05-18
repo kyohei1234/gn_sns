@@ -69,7 +69,7 @@
     <!-- Article -->
     <article>
       <!-- Board articles -->
-      <ul class="thumbnails">
+      <ul class="thumbnails plugin-filter-elements portfolio-items">
         <!-- Blog post -->
         <%= render @boards %>
       </ul>
@@ -124,7 +124,7 @@
 <!-- END PAGE | OPINION -->
 
 <!-- PAGE | FRIENDS -->
-<div class="pages page-friends" id="page-friends">
+<div class="pages page-about" id="page-about">
   <div class="container">
     <!-- Header -->
     <header>
@@ -142,20 +142,18 @@
     <!-- Article -->
     <article>
       <!-- List of people and description with their contact details which are visable on hover -->
-      <div class="page-about">
-        <ul class="thumbnails about-items">
-          <%= render @friends %>
-        </ul>
-      </div>
+      <ul class="thumbnails about-items">
+        <%= render @friends %>
+      </ul>
     </article>
     <!-- End Article -->
     <!-- More blog posts -->
     <footer>
-    <div class="show-more-cube">
-    <%= link_to friends_path, class: "show-more-cube" do %>
-    <span>All</br>friends</span>
-    <% end %>
-    </div>
+      <div class="show-more-cube">
+      <%= link_to friends_path, class: "show-more-cube" do %>
+        <span>All</br>friends</span>
+      <% end %>
+      </div>
     </footer>
   </div>
 </div>
@@ -172,11 +170,11 @@
     <!-- End Header -->
     <!-- Article -->
     <article>
-    <!-- Blog articles -->
-    <ul class="thumbnails">
-      <!-- Blog post -->
-        <%= render @blogs %>
-    </ul>
+      <!-- Blog articles -->
+      <ul class="thumbnails">
+        <!-- Blog post -->
+          <%= render @blogs %>
+      </ul>
     </article>
     <!-- End Article -->
     <!-- Footer -->

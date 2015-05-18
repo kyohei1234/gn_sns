@@ -1,0 +1,26 @@
+<!-- Blog image -->
+<%= blog_image_for blog %>
+<!-- Blog title -->
+<h5>
+    <%= blog.title %>
+    <br/>
+    <!-- 本来はusernameを表示 -->
+    <small>Edited By Admin, Written By 
+        <%= blog.user.username %>, 
+        <%= blog.created_at %>
+    </small>
+</h5>
+<!-- Blog post description admin側で要約でも書くか -->
+<%= cut_off blog.body, 100 %>
+<!-- Blog read more -->
+<div class="read-more">
+    <%= link_to "Read More...", blog_path(blog.id) %>
+</div>
+<!-- Blog comments -->
+<div class="comments">
+    <!-- comment数のカウントを入れること！今は便宜上4 commentsになっている -->
+    <%= blog.comments.count %>
+</div>
+<br>
+<br>
+<br>

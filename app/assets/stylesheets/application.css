@@ -675,6 +675,21 @@
   line-height: 18px;
   margin-bottom: 30px;
 }
+.scroll-box{
+  max-height: 300px;
+  overflow: scroll;
+  background-color: #ffffff
+}
+.scroll-box-inner{
+  width: 95%;
+  margin: auto;
+}
+
+/*.float-field {
+  float: left;
+  margin-right: 5px;
+}*/
+
 .page-blog-list .comments-details .media {
   padding: 15px 0 25px;
   border-bottom: 1px solid #bbbbbb;

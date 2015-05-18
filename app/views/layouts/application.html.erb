@@ -19,7 +19,11 @@
   <!-- NAVIGATION -->
   <body>
     <div id="contents">
-      <%= render "shared/header" %>
+      <% if current_page?(root_path) %>
+        <%= render "shared/header" %>
+      <% else %>
+        <%= render "shared/header2" %>
+      <% end %>
       <!-- END NAVIGATION -->
       <main>
         <% if notice %>

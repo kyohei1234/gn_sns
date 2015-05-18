@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :blogs
   has_many :friends
   has_many :opinions
+  has_many :responses
 end
