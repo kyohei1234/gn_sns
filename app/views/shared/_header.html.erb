@@ -1,4 +1,8 @@
-<nav class="fixed-top" id="navigation">
+<% if current_page?(about_index_path) %>
+  <nav class="fixed-top" id="navigation">
+<% else %>
+  <nav class="fixed-top navigation-display" id="navigation">
+<% end %>
   <div class="container">
     <div class="row-fluid">
       <div class="span12 center">

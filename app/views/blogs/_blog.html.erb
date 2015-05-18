@@ -12,5 +12,8 @@
   <!-- Blog read more -->
   <div>
     コメント（<%= link_to blog.comments.count, blog_path(blog) %>）
+    <div class="read-more">
+      <%= link_to "Read More...", blog_path(blog) %>
+    </div>
   </div>
 </li>
