@@ -1,38 +1,40 @@
-<div class="container">
-  <!-- Header -->
-  <header>
-    <!-- Sub menu -->
-    <nav class="submenu">
-      <ul>
-        <li>
-          <a href="./pages/blog/blog.html">All</a>
-        </li>
-        <li>
-          <a href="./pages/blog/blog.html">Technology</a>
-        </li>
-        <li>
-          <a href="./pages/blog/blog.html">Design</a>
-        </li>
-        <li>
-          <a href="./pages/blog/blog.html">Future trends</a>
-        </li>
-        <li>
-          <a href="./pages/blog/blog.html">Other</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <!-- End Header -->
-  <article>
-    <h2>Board</h2>
-    <!-- Blog articles -->
-    <ul class="thumbnails plugin-filter-elements portfolio-items">
-      <!-- Blog post -->
-      <%= render @boards %>
-    </div>
-  </article>
-</div>
-<br>
+<!-- PAGE | BLOG -->
+<div class="pages page-blog-list" id="page-blog-list">
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <!-- Sub menu -->
+      <nav class="submenu">
+        <ul>
+          <li>
+            <a href="./pages/blog/blog.html">All</a>
+          </li>
+          <li>
+            <a href="./pages/blog/blog.html">Technology</a>
+          </li>
+          <li>
+            <a href="./pages/blog/blog.html">Design</a>
+          </li>
+          <li>
+            <a href="./pages/blog/blog.html">Future trends</a>
+          </li>
+          <li>
+            <a href="./pages/blog/blog.html">Other</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- End Header -->
+    <article>
+      <h2>Board</h2>
+      <!-- Blog articles -->
+      <ul class="thumbnails plugin-filter-elements portfolio-items">
+        <!-- Blog post -->
+        <%= render @boards %>
+      </div>
+    </article>
+  </div>
+  <br>
 
-<%= link_to 'New Board', new_board_path %>
+  <%= link_to 'New Board', new_board_path %>
 
