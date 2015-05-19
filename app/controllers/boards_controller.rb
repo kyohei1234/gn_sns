@@ -4,13 +4,13 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
-    @boards = Board.all
+    @boards = Board.all.order("created_at DESC")
   end
 
   # GET /boards/1
   # GET /boards/1.json
   def show
-    @board = Board.find(params[:id]) 
+    @board = Board.find(params[:id])
   end
 
   # GET /boards/new

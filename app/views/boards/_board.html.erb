@@ -3,10 +3,16 @@
   <%= link_to board_path(board) do %>
     <%= board_image_for board %>
     <div class="portfolio-overlay">
-      <h4><%= cut_off board.body, 150 %></h4>
+      <h4><%= board.title %></h4>
     </div>
   <% end %>
-  <h5><%= link_to board.title, board_path(board) %></h5><br/>
-  <small><%= board.created_at %></small>
+  <h5>
+    <% if board.user %>
+      <small>Posted By <%= board.user.username %>, <%= board.created_at.strftime('%Y/%m/%d')%></small>
+    <% else %>
+      <small>Posted By no_name, <%= board.created_at.strftime('%Y/%m/%d')%>small>
+    <% end %>
+  </h5>
   <!-- Blog post description -->
+  <p class="smallFontBy08"><%= cut_off board.body, 150 %></p>
 </li>
