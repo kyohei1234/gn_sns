@@ -5,6 +5,7 @@ class BoardsController < ApplicationController
   # GET /boards.json
   def index
     @boards = Board.all.order("created_at DESC")
+    @lates_boards = Board.all.order("created_at DESC").limit(5)
   end
 
   # GET /boards/1

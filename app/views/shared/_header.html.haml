@@ -1,0 +1,29 @@
+%nav#navigation.fixed-top
+  .container
+    .row-fluid
+      .span12.center
+        / END LOGO
+        .header_logo
+          = link_to image_tag('landing/gnlf_png.png', "width"=>"78", "height"=>"26"), root_path
+        / MOBILE MENU BUTTON
+        .mobile-menu{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        / END MOBILE MENU BUTTON
+        / MAIN MENU
+        %ul#main-menu.nav-collapse.collapse
+          %li= link_to "Home", "#page-welcome"
+          %li= link_to "Friends","#page-friends"
+          %li= link_to "Blogs","#page-blogs"
+          %li= link_to "Sponsors","#page-sponsors"
+          %li= link_to "Boards","#page-boards"
+          %li= link_to "Information","#page-information"
+        / END MAIN MENU
+        / SOCIAL ICONS
+        .social-icons.hover-big.pull-right
+          = link_to "https://www.facebook.com/groups/151692711639352/" do
+            %i.fa.fa-facebook-official.fa-5
+          = link_to "#" do
+            %i.fa.fa-twitter
+        / END SOCIAL ICONS

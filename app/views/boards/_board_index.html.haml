@@ -1,0 +1,17 @@
+%li.span4
+  / Blog image
+  = link_to board_path(board) do
+    = board_image_for board
+    .portfolio-overlay
+      %h4= board.title
+  / %h5
+  /   - if board.user
+  /     %small
+  /       Posted By #{board.user.username}, 
+  /       = board.created_at.strftime('%Y/%m/%d')
+  /   - else
+  /     %small
+  /       Posted By no_name, 
+  /       = board.created_at.strftime('%Y/%m/%d')
+  / Blog post description
+  / %p.smallFontBy08= cut_off board.body, 150

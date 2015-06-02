@@ -1,0 +1,17 @@
+%li.span4.center
+  .item
+    / Blog image
+    = friend_image_for friend
+    .about-overlay.img-circle
+      .social-icons.sicon-white
+        = link_to '#', class: "sicon-facebook" do
+          %i Faceook
+        = link_to '#', class: "sicon-twitter" do
+          %i Twitter
+  / Team member name and function
+  %h5
+    = link_to friend.title, friend_path(friend)
+    %br/
+    - if friend.user
+      %small
+        Posted By Admin, Written By #{friend.user.username}

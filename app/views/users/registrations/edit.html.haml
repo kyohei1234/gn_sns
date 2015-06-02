@@ -1,0 +1,39 @@
+%section#item-content-wrapper.section
+  .container
+    .row
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        .col-md-6.item-details.wrapper-1
+          %h3.subpage-title
+            %i.fa.fa-pencil>
+            Edit #{resource_name.to_s.humanize} Profile
+          = devise_error_messages!
+          %ul.project-details-list
+            %li
+              %h6 email *required
+              .project-terms
+                = f.text_field :email, autofocus: true, class: "form-control"
+            %li
+              %h6
+                password
+                %i (leave blank if you don't want to change it)
+              .project-terms
+                = f.password_field :password, autocomplete: "off", class: "form-control"
+            %li
+              %h6 password again *required
+              .project-terms
+                = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+            %li
+              %h6
+                current password *
+                %i (we need your current password to confirm your changes)
+              .field
+                = f.password_field :current_password, autocomplete: "off", class: "form-control"
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+        .actions
+          = f.submit "Update"
+      /
+        <h3>Cancel my account</h3>
+        <p>Unhappy? <haml_loud> button_to &quot;Cancel my account&quot;, registration_path(resource_name), data: { confirm: &quot;Are you sure?&quot; }, method: :delete </haml_loud></p>
+        <haml_loud> link_to &quot;Back&quot;, :back </haml_loud>

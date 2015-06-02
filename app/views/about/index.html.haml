@@ -1,0 +1,195 @@
+%body
+  #page-welcome.pages.white.paralax.page-welcome
+    .overlay
+    / Centralized content
+    .centralized
+      .container
+        .row-fluid
+          .span12.center
+            / Animated logo
+            .logo
+              .scrollNormal
+                = link_to "#page-friends" do
+                  = image_tag 'pages/welcome/logo2_welcome.png', :size => '140x140', :alt => 'Treble'
+              .scrollDown
+                = link_to "#page-friends" do
+                  = image_tag 'pages/welcome/logo2_welcome.png', :size => '140x140', :alt => 'Treble'
+            #welcome-messages.line-divider
+              %ul.slides
+                %li
+                  %h1 GLOBAL
+                  %h1 NEXTLEADERS
+                  %h1 FORUM
+                  %small KNOWLEDGE, EXPERIENCE, AND HUMAN NETWORKS
+            %div
+              / user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド
+              - if user_signed_in?
+                /
+                  *_path はUserモデルを作成したときに、
+                  deviseにより自動で作成されてますので、rake routesで確認できます
+                Logged in as
+                = succeed "." do
+                  %strong= current_user.email
+                = link_to 'プロフィール変更', edit_user_registration_path
+                |
+                \#{link_to "ログアウト", destroy_user_session_path, method: :delete}
+              - else
+                = link_to "サインイン", new_user_registration_path
+                |
+                \#{link_to "ログイン", new_user_session_path}
+            .social-icons.sicon-white.bordered
+              = link_to '#', class: "sicon-facebook" do
+                %i Faceook
+              = link_to '#', class: "sicon-twitter" do
+                %i Twitter
+  / END PAGE | Welcome
+  / PAGE | BOARD
+  #page-boards.pages.page-boards
+    .container
+      / Header
+      %header
+        %h4.line-divider Boards
+        %h1 Discuss with everyone
+      / End Header
+      / Article
+      %article
+        / Board articles
+        %ul.thumbnails.plugin-filter-elements.portfolio-items
+          / Blog post
+          = render @boards
+      / End Article
+      / Footer
+      %footer
+        / More board posts
+        .show-more-cube
+          = link_to boards_path, class: "show-more-cube" do
+            %span
+              Let's
+              %br>/
+              Talk
+      / End Footer
+  / PAGE | OPINION
+  .pages.white.paralax.page-twitter
+    / Page overlay
+    .overlay
+    / Block content
+    .container
+      .row-fluid
+        .span8.offset2
+          %h5.center Latest Post
+          .twitter-devider
+          / Load Twitter boostrap container
+          #twitterfeed-slider.twitterfeed.center.slide
+            %ul.tweet_list
+              - @opinions.each do |opinion|
+                %li.tweet_text
+                  - if !opinion.user.nil?
+                    %span= link_to opinion.user.username, "#"
+                    %br/
+                  - else
+                    %span no_name
+                    %br/
+                  = cut_off(opinion.body, 170)
+                  %br/
+                  = link_to board_path(opinion.board_id) do
+                    %span
+                      \&gt;&gt; #{opinion.board.title}
+  / END PAGE | OPINION
+  / PAGE | FRIENDS
+  #page-about.pages.page-about
+    .container
+      / Header
+      %header
+        %h4.line-divider Friends
+        %h1 Meet Friends
+        .row
+          .span8.offset2
+            %p
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      / End Header
+      / Article
+      %article
+        / List of people and description with their contact details which are visable on hover
+        %ul.thumbnails.about-items
+          = render @friends
+      / End Article
+      / More blog posts
+      %footer
+        .show-more-cube
+          = link_to friends_path, class: "show-more-cube" do
+            %span Allfriends
+  / END PAGE | FRIEND
+  / PAGE | BLOG
+  #page-blogs.pages.page-blog
+    .container
+      / Header
+      %header
+        %h4.line-divider Diary
+        %h1 World Relay Diary
+      / End Header
+      / Article
+      %article
+        / Blog articles
+        %ul.thumbnails
+          / Blog post
+          = render @blogs
+      / End Article
+      / Footer
+      %footer
+        / More blog posts
+        .show-more-cube
+          = link_to blogs_path, class: "show-more-cube" do
+            %span
+              All Blog
+              %br>/
+              Posts
+      / End Footer
+  / END PAGE | BLOG
+  / PAGE | WORK
+  #page-sponsors.pages.page-work
+    .container
+      / Header
+      %header
+        %h4.line-divider Sponsors
+        .row
+          .span8.offset2
+            = image_tag('logo/gnlf002.jpg', "width"=>"300", "height"=>"80")
+  / PAGE | CLIENTS
+  /
+    <div class="pages page-clients" id="page-clients">
+    <div class="container">
+    <h4 class="line-divider-inline center">Satisfied clients</h4>
+  / Client logos
+  /
+    <div class="row-fluid">
+    <div class="span2 center">
+    <img src="http://placehold.it/180x70" alt="Treble">
+    </div>
+    <div class="span2 center">
+    <img src="http://placehold.it/180x70" alt="Treble">
+    </div>
+    <div class="span2 center">
+    <img src="http://placehold.it/180x70" alt="Treble">
+    </div>
+    <div class="span2 center">
+    <img src="http://placehold.it/180x70" alt="Treble">
+    </div>
+    <div class="span2 center">
+    <img src="http://placehold.it/180x70" alt="Treble">
+    </div>
+    <div class="span2 center">
+    <img src="http://placehold.it/180x70" alt="Treble">
+    </div>
+    </div>
+  / Short text related to client's
+  /
+    <div class="row-fluid">
+    <div class="span8 offset2 center smallFontBy08">
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+  / END PAGE | CLIENTS

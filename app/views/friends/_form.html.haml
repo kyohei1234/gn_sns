@@ -1,0 +1,18 @@
+.row
+  .span6.offset3
+    = form_for @friend, html: { multipart: true} do |f|
+      .field
+        = f.label :title
+        %br/
+        = f.text_field :title
+      .field
+        = f.label :body
+        %br/
+        = f.text_field :body
+      %div
+        = f.label :image
+        %br/
+        = f.file_field :image
+      .actions
+        = f.submit "登録"
+      = link_to "friend一覧へ", friends_path
