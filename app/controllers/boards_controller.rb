@@ -12,6 +12,8 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
+    @boards = Board.order("created_at DESC").limit(5)
+    @opinions = @board.opinions
   end
 
   # GET /boards/new

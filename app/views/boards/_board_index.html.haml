@@ -1,17 +1,29 @@
-%li.span4
-  / Blog image
-  = link_to board_path(board) do
-    = board_image_for board
-    .portfolio-overlay
-      %h4= board.title
-  / %h5
-  /   - if board.user
-  /     %small
-  /       Posted By #{board.user.username}, 
-  /       = board.created_at.strftime('%Y/%m/%d')
-  /   - else
-  /     %small
-  /       Posted By no_name, 
-  /       = board.created_at.strftime('%Y/%m/%d')
-  / Blog post description
-  / %p.smallFontBy08= cut_off board.body, 150
+/ board image
+= board_image_for board
+/ board title
+%h5
+  = board.title
+  %br/
+  / 本来はusernameを表示
+  - if board.user
+    %small
+      Edited By Admin, Written By
+      \#{board.user.username},
+      \#{board.created_at}
+  - else
+    %small
+      Edited By Admin, Written By
+      \no_name,
+      \#{board.created_at}
+/ board post description admin側で要約でも書くか
+= cut_off board.body, 100
+/ board read more
+.read-more
+  = link_to "Read More...", board_path(board.id)
+/ board comments
+.comments
+  / comment数のカウントを入れること！今は便宜上4 commentsになっている
+  = board.opinions.count
+%br/
+%br/
+%br/

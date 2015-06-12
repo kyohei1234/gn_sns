@@ -54,7 +54,7 @@
                           - if comment.user.nil?
                             no_name
                           - else
-                            = link_to "#{comment.user.name}", "#"
+                            = link_to "#{comment.user.username}", "#"
                           = comment.created_at
                       %p
                         = comment.body
@@ -63,6 +63,7 @@
               .row-fluid
                 .span8
                   = form_for @blog.comments.build do |f|
+                    = hidden_field_tag "comment[user_id]", current_user.id
                     = f.hidden_field :blog_id
                     .field.float-field
                       = f.text_area :body

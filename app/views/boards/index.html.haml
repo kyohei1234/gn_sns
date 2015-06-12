@@ -6,40 +6,40 @@
         %h4.line-divider Boards
         %h1 Discuss with everyone
         .row
-          .col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
+          .span8.offset2
             .input-append
               %input#appendedInputButton.span5{:placeholder => "Search Boards", :type => "text"}/
               %button.btn.btn-primary.sicon-search.sicon-white{:type => "button"}
                 %i Search
-        / Sub menu
-        %nav.submenu
-          %ul
-            %li
-              %a{:href => "./pages/blog/blog.html"} All
-            %li
-              %a{:href => "./pages/blog/blog.html"} Technology
-            %li
-              %a{:href => "./pages/blog/blog.html"} Design
-            %li
-              %a{:href => "./pages/blog/blog.html"} Future trends
-            %li
-              %a{:href => "./pages/blog/blog.html"} Other
-      .row-fluid.row
-        .col-xs-12.col-sm-8.col-md-8.thumbnails.plugin-filter-elements.portfolio-items
+      .row-fluid
+        .span8.blog-details
           / Article
           %article
-            %ul
-              = render @boards
-              / - @boards.each do |board|
-              /   = render "board_index", board: board
+            - @boards.each do |board|
+              = render "board_index", board: board
           / ページャ
           .pagination.center
         / 最新記事を載せる５件まで
-        .col-xs-12.col-sm-4.col-md-4.blog-list-right
-          / Latest blog posts block
+        .span4.blog-list-right
+          / Latest board posts block
           .block
-            %h6 Lates board
+            %h6 Lates board posts
             %ul.simple-link-list
-              - @lates_boards.each do |lates_boards|
+              - @lates_boards.each do |lates_board|
                 %li
-                  = link_to "#{lates_boards.title}", boards_path(lates_boards)
+                  = link_to "#{lates_board.title}", board_path(lates_board)
+          / Tags
+          .block
+            %h6 Topics
+            %nav.submenu
+              %ul
+                %li
+                  %a.active{:href => "./board.html"} All
+                %li
+                  %a{:href => "./board.html"} Economics
+                %li
+                  %a{:href => "./board.html"} Bussiness
+                %li
+                  %a{:href => "./board.html"} Global Issues
+          / ページャ
+          .pagination.center
