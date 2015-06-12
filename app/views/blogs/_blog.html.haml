@@ -1,0 +1,14 @@
+%li.span4
+  / Blog image
+  = link_to blog_path(blog) do
+    = blog_image_for blog
+  %h5
+    = link_to blog.title, blog_path(blog)
+    %br/
+    %small
+      Posted By Admin, Written By #{blog.user.username}
+  / Blog post description
+  %p.smallFontBy08= cut_off blog.body, 150
+  / Blog read more
+  .read-more
+    = link_to "Read More...", blog_path(blog)

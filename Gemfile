@@ -4,6 +4,11 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.5'
 
+#View & Helpers
+gem 'haml-rails'
+# Modify erb to haml
+gem 'erb2haml'
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   # gem 'rspec-rails', '2.13.1'

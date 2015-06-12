@@ -1,0 +1,73 @@
+%body
+  #page-blog-list.pages.page-blog-list
+    .container
+      / Header
+      %header
+        %h4.line-divider Diary
+        %h1 World Relay Diary
+        .row
+          .span8.offset2
+            .input-append
+              %input#appendedInputButton.span5{:placeholder => "Search Diary", :type => "text"}/
+              %button.btn.btn-primary.sicon-search.sicon-white{:type => "button"}
+                %i Search
+      / End Header
+      .row-fluid
+        .span8.blog-details
+          / Article
+          %article
+            - @blogs.each do |blog|
+              = render "blog_index", blog: blog
+          / ページャ
+          .pagination.center
+        / 最新記事を載せる５件まで
+        .span4.blog-list-right
+          / Latest blog posts block
+          .block
+            %h6 Lates blog posts
+            %ul.simple-link-list
+              - @lates_blogs.each do |lates_blog|
+                %li
+                  = link_to "#{lates_blog.title}", blog_path(lates_blog)
+          / Tags
+          .block
+            %h6 Topics
+            %nav.submenu
+              %ul
+                %li
+                  %a.active{:href => "./blog.html"} All
+                %li
+                  %a{:href => "./blog.html"} Traditionl Food
+                %li
+                  %a{:href => "./blog.html"} Club Activeities
+                %li
+                  %a{:href => "./blog.html"} Traditional Festival
+  / JQUERY
+  !!! XML
+  / TWITTER BOOTSTRAP
+  !!! XML
+  /[if lt IE 9]
+    <script src="assets/js/bootstrap/html5shiv.js"></script>
+  / PLUGINS
+  !!! XML
+  !!! XML
+  !!! XML
+  !!! XML
+  !!! XML
+  !!! XML
+  !!! XML
+  !!! XML
+  !!! XML
+  !!! XML
+  !!! XML
+  / INITIALIZE
+  !!! XML
+  / GOOGLE ANALYTICS
+  :javascript
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44061294-1', 'gridelicious.net');
+    ga('send', 'pageview');

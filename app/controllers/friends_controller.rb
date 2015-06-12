@@ -14,7 +14,9 @@ class FriendsController < ApplicationController
 	end
 
 	def show
-		@friend = Friend.find(params[:id])	
+		@friend = Friend.find(params[:id])
+		@friends = Friend.all.order("created_at DESC").limit(5)	
+		@responses = @friend.responses
 	end
 
 	def create

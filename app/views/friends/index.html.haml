@@ -1,0 +1,10 @@
+.container
+  %p.friend_title Friends
+  %article
+    / List of people and description with their contact details which are visable on hover
+    .page-about
+      %ul.thumbnails.about-items
+        = render @friends
+        / Team member short info
+  = link_to 'New Friend', new_friend_path
+  = link_to "Top", root_path

@@ -5,12 +5,15 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    @lates_blogs = Blog.all.order("created_at DESC").limit(5)
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blogs = Blog.all.order("created_at DESC").limit(5)
     @blog = Blog.find(params[:id]) 
+    @comments = @blog.comments.order("created_at DESC")
   end
 
   # GET /blogs/new

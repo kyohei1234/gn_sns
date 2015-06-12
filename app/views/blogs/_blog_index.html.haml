@@ -1,0 +1,23 @@
+/ Blog image
+= blog_image_for blog
+/ Blog title
+%h5
+  = blog.title
+  %br/
+  / 本来はusernameを表示
+  %small
+    Edited By Admin, Written By
+    \#{blog.user.username},
+    \#{blog.created_at}
+/ Blog post description admin側で要約でも書くか
+= cut_off blog.body, 100
+/ Blog read more
+.read-more
+  = link_to "Read More...", blog_path(blog.id)
+/ Blog comments
+.comments
+  / comment数のカウントを入れること！今は便宜上4 commentsになっている
+  = blog.comments.count
+%br/
+%br/
+%br/
