@@ -23,8 +23,10 @@
                 info@nextleaders.net
             %h5 Get social
             .social-icons.sicon-white.bordered
-              = link_to "", "https://www.facebook.com/groups/151692711639352/", class: "sicon-facebook fa fa-facebook"
-              = link_to "" ,"#twitter", class: "sicon-twitter fa fa-twitter"
+              = link_to "https://www.facebook.com/groups/151692711639352/", class: "sicon-facebook" do
+                %i
+              = link_to "#", class: "sicon-twitter" do
+                %i
           / End Contact information
       / End Article
     / Background map image
