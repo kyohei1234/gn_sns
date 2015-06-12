@@ -2,6 +2,12 @@
 // IT'S ALL JUST JUNK FOR OUR DOCS!
 // ++++++++++++++++++++++++++++++++++++++++++
 
+//= require jquery
+//= require jquery_ujs
+//= require_directory ./application
+//= require_directory ./bootstrap
+//= require_directory ./plugins
+
 !function ($) {
 
   $(function(){

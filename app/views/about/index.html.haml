@@ -37,11 +37,11 @@
                 = link_to "サインイン", new_user_registration_path
                 |
                 \#{link_to "ログイン", new_user_session_path}
-            .social-icons.sicon-white.bordered
-              = link_to '#', class: "sicon-facebook" do
-                %i Faceook
-              = link_to '#', class: "sicon-twitter" do
-                %i Twitter
+            / .social-icons.sicon-white.bordered
+            /   = link_to '#', class: "sicon-facebook" do
+            /     %i
+            /   = link_to '#', class: "sicon-twitter" do
+            /     %i
   / END PAGE | Welcome
   / PAGE | BOARD
   #page-boards.pages.page-boards
@@ -117,7 +117,10 @@
       %footer
         .show-more-cube
           = link_to friends_path, class: "show-more-cube" do
-            %span Allfriends
+            %span 
+              All
+              %br>/
+              friends
   / END PAGE | FRIEND
   / PAGE | BLOG
   #page-blogs.pages.page-blog

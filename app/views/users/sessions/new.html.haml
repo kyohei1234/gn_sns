@@ -6,25 +6,26 @@
     .container
       .row-fluid
         .span12.center
-          %h2 Only For GNLF
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-            .field
-              = f.label :email
-              = f.email_field :email, autofocus: true, class: "form-control"
-            .field
-              = f.label :password
-              = f.password_field :password, autocomplete: "off"
-            - if devise_mapping.rememberable?
+          %h2 ONLY FOR GNLF
+          #write-replay.write-comment
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
               .field
-                = f.check_box :remember_me
-                = f.label :remember_me
-            .actions
-              = f.submit "Log in"
-          = render "users/shared/links"
-          .social-icons.bordered
-            = link_to "#", class: "font-awesome" do
-              %i.fa.fa-facebook
-            = link_to "#", class: "font-awesome" do
-              %i.fa.fa-twitter
+                = f.label :email
+                = f.email_field :email, autofocus: true, class: "form-control"
+              .field
+                = f.label :password
+                = f.password_field :password, autocomplete: "off"
+              - if devise_mapping.rememberable?
+                .field
+                  = f.check_box :remember_me
+                  = f.label :remember_me
+              .actions
+                = f.submit "Log in", class: "btn btn-primary btn-lg"
+          / = render "users/shared/links"
+          .social-icons.sicon-white.bordered
+            = link_to "https://www.facebook.com/groups/151692711639352/", class: "sicon-facebook" do
+              %i
+            = link_to "#", class: "sicon-twitter" do
+              %i
             %br/
 / END PAGE | Welcome
