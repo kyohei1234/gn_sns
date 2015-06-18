@@ -6055,11 +6055,9 @@ input[type="submit"].btn.btn-mini {
 .row-fluid .thumbnails {
   margin-left: 0;
 }
-/*boxプロパティをなんとか駆使したい！！*/
 .thumnails {
-  /*width: 100%;  */
-  display: -webkit-box;　/* Safari,Google Chrome用 */  
-  display: -moz-box;　/* Firefox用 */
+  display: -webkit-box;
+  display: -moz-box;
 }
 .blog-thumnail {
   height: 300px;
@@ -6069,12 +6067,7 @@ input[type="submit"].btn.btn-mini {
   height: 300px;
   width: 390px;
 }
-/*セレクタ「＞」の意味は、「子要素のみに適用」*/
 .thumbnails > li {
-  /*float: left;*/
-  /*width: 100%;  */
-  /*display: -webkit-box;　 Safari,Google Chrome用   */
-  /*display: -moz-box;　/* Firefox用 */
   margin-bottom: 27px;
   margin-left: 21px;
 }
