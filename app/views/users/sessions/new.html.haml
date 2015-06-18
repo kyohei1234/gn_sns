@@ -21,6 +21,9 @@
                   = f.label :remember_me
               .actions
                 = f.submit "Log in", class: "btn btn-primary btn-lg"
+      .row-fluid
+        .span12.center
+          = render "users/shared/links"
           / = render "users/shared/links"
           .social-icons.sicon-white.bordered
             = link_to "https://www.facebook.com/groups/151692711639352/", class: "sicon-facebook" do

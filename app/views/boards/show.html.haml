@@ -4,36 +4,34 @@
       %p#notice= notice
       / Header
       %header
-        %h4.line-divider Opinion
+        %h4.line-divider Board
         %h1= @board.title
-        .row
-          .span8.offset2
-            .input-append
-              %input#appendedInputButton.span5{:placeholder => "Search Blog", :type => "text"}/
-              %button.btn.btn-primary.sicon-search.sicon-white{:type => "button"}
-                %i Search
+        / .row
+        /   .span8.offset2
+        /     .input-append
+        /       %input#appendedInputButton.span5{:placeholder => "Search Blog", :type => "text"}/
+        /       %button.btn.btn-primary.sicon-search.sicon-white{:type => "button"}
+        /         %i Search
+              
       / End Header
       .row-fluid
         .span8.blog-details
           / Article
           %article
-            / Blog image
             = board_image_for @board
-            / Blog title
             %h5
               = @board.title
               %br/
               - if @board.user
                 %small
-                  Posted By Admin, Written By #{link_to "#{@board.user.username}", "#"}
+                  Written By 
+                  = link_to "#{@board.user.username}", "#"
               - else
                 %small
                   Posted By Admin, Written By no_name
               = @board.created_at.strftime('%Y/%m/%d')
-              / ここにリレータイトルを入れたい！！
-              / <a href="#">Photography</a>
             / Blog post description
-            = @board.body
+            = raw @board.body
             %hr/
           / End Article
           / Blog comments
@@ -69,28 +67,36 @@
                     .actions
                       = f.submit "Post!", class: "btn btn-primary"
           / End Blog comments
-        / 最新記事を載せる５件まで
         .span4.blog-list-right
-          / Latest blog posts block
+          / Latest board posts block
           .block
-            %h6 Lates Boards
+            %h6 Lates board posts
             %ul.simple-link-list
-              - @boards.each do |board|
+              - @lates_boards.each do |lates_board|
                 %li
-                  = link_to "#{board.title}", board_path(board)
+                  = link_to "#{lates_board.title}", board_path(lates_board)
           / Tags
           .block
             %h6 Topics
             %nav.submenu
               %ul
                 %li
-                  %a.active{:href => "./blog.html"} All
+                  = link_to "all", boards_path
                 %li
-                  %a{:href => "./blog.html"} Traditionl Food
+                  = link_to "economics", boards_search_by_category_path(category: "economics"), remote: true
                 %li
-                  %a{:href => "./blog.html"} Club Activeities
+                  = link_to "business", boards_search_by_category_path(category: "business"), remote: true
                 %li
-                  %a{:href => "./blog.html"} Traditional Festival
+                  = link_to "global issues", boards_search_by_category_path(category: "global-issues"), remote: true
+          / Tags
+          .block
+            %h6 Others
+            %ul.simple-link-list
+              %li
+                = link_to "Make A New Board", new_board_path
+              - if @board.user == current_user
+                %li
+                  = link_to "Edit This Board", edit_board_path(@board)
   / END PAGE | BLOG
   / JQUERY
   !!! XML
