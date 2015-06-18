@@ -43,6 +43,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 # デバイス
 gem 'devise'
+gem 'therubyracer'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
