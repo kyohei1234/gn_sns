@@ -7,14 +7,29 @@
         %h1 Discuss with everyone
         .row
           .span8.offset2
-            .input-append
-              %input#appendedInputButton.span5{:placeholder => "Search Boards", :type => "text"}/
-              %button.btn.btn-primary.sicon-search.sicon-white{:type => "button"}
-                %i Search
+            / .input-append
+            /   %input#appendedInputButton.span5{:placeholder => "Search Boards", :type => "text"}/
+            /   %button.btn.btn-primary.sicon-search.sicon-white{:type => "button"}
+            /     %i Search
+            = form_tag boards_search_path, remote: true do
+              .input-append
+                = text_field_tag :search_word, '', id: "appendedInputButton", class: "span5", placeholder: "Search Boards"
+                %button.btn.btn-primary.sicon-search.sicon-white{:type => "submit"}
+                  %i Search
+        / %nav.submenu
+        /   %ul
+        /     %li
+        /       = link_to "all", remote: true
+        /     %li
+        /       = link_to "economics", remote: true
+        /     %li
+        /       = link_to "bussiness", remote: true
+        /     %li
+        /       = link_to "global issues", remote: true
       .row-fluid
         .span8.blog-details
           / Article
-          %article
+          %article#boards-article
             - @boards.each do |board|
               = render "board_index", board: board
           / ページャ
@@ -34,12 +49,17 @@
             %nav.submenu
               %ul
                 %li
-                  %a.active{:href => "./board.html"} All
+                  = link_to "all", boards_path
                 %li
-                  %a{:href => "./board.html"} Economics
+                  = link_to "economics", boards_search_by_category_path(category: "economics"), remote: true
                 %li
-                  %a{:href => "./board.html"} Bussiness
+                  = link_to "business", boards_search_by_category_path(category: "business"), remote: true
                 %li
-                  %a{:href => "./board.html"} Global Issues
+                  = link_to "global issues", boards_search_by_category_path(category: "global-issues"), remote: true
+          .block
+            %h6 Lates board posts
+            %ul.simple-link-list
+              %li
+                = link_to "Make New Board", new_board_path
           / ページャ
           .pagination.center

@@ -8,12 +8,18 @@
       .field
         = f.label :body
         %br/
-        = f.text_field :body
-      %div
-        = f.label :image
+        = f.text_area :body, class: "ckeditor"
+      .field
+        = f.label "feature image"
         %br/
         = f.file_field :image
-      = f.hidden_field :user_id
+      .field
+        = f.label "board category"
+        %br/
+        = f.select :category, [["Economics", "Economics"], ["Politics", "Politics"], ["Global Issues", "Global Issues"], ["Business", "Business"]],  :include_blank => true
+      = hidden_field_tag "board[user_id]", current_user.id
       .actions
-        = f.submit "投稿"
-      = link_to "board一覧へ", boards_path
+        = f.submit "Post"
+      = link_to "go to boards index", boards_path
+%script{:src => "//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"}
+%script CKEDITOR.replace( 'ckeditor' );

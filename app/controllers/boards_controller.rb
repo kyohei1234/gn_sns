@@ -12,7 +12,7 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @boards = Board.order("created_at DESC").limit(5)
+    @lates_boards = Board.all.order("created_at DESC").limit(5)
     @opinions = @board.opinions
   end
 
@@ -60,6 +60,15 @@ class BoardsController < ApplicationController
     end
   end
 
+  def search
+    @boards = Board.where(['body LIKE ?', "%#{params[:search_word]}%"])
+  end
+
+  def category_search
+    @boards = Board.where(category: params[:category])
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
@@ -68,6 +77,6 @@ class BoardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def board_params
-      params.require(:board).permit(:title, :body)
+      params.require(:board).permit(:title, :body, :user_id, :category)
     end
 end

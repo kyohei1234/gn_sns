@@ -4,9 +4,9 @@ module AboutHelper
   def cut_off(text, len)
     if text != nil
       if text.length < len
-        text
+        raw text
       else
-        text.scan(/^.{#{len}}/m)[0] + "…"
+        raw text.scan(/^.{#{len}}/m)[0] + "…"
       end
     else
       ''
