@@ -30,13 +30,13 @@
                 Logged in as
                 = succeed "." do
                   %strong= current_user.email
-                = link_to 'プロフィール変更', edit_user_registration_path
+                = link_to 'プロフィール変更', edit_user_registration_path, class: "login-menu"
                 |
-                \#{link_to "ログアウト", destroy_user_session_path, method: :delete}
+                \#{link_to "ログアウト", destroy_user_session_path, method: :delete, class: "login-menu"}
               - else
-                = link_to "サインイン", new_user_registration_path
+                = link_to "サインイン", new_user_registration_path, class: "login-menu"
                 |
-                \#{link_to "ログイン", new_user_session_path}
+                \#{link_to "ログイン", new_user_session_path, class: "login-menu"}
             / .social-icons.sicon-white.bordered
             /   = link_to '#', class: "sicon-facebook" do
             /     %i
@@ -83,15 +83,18 @@
             %ul.tweet_list
               - @opinions.each do |opinion|
                 %li.tweet_text
+                  .top-opinion
+                    = cut_off(opinion.body, 170)
                   - if !opinion.user.nil?
-                    %span= link_to opinion.user.username, "#"
+                    by 
+                    %span= link_to opinion.user.username, "#", class: "top-opinion-author"
                     %br/
                   - else
+                    by 
                     %span no_name
                     %br/
-                  = cut_off(opinion.body, 170)
                   %br/
-                  = link_to board_path(opinion.board_id) do
+                  = link_to board_path(opinion.board_id), class: "top-opinion-board" do
                     %span
                       \&gt;&gt; #{opinion.board.title}
   / END PAGE | OPINION

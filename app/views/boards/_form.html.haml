@@ -1,25 +1,54 @@
-.row
-  .span6.offset3
-    = form_for @user.boards.build do |f|
-      .field
-        = f.label :title
-        %br/
-        = f.text_field :title
-      .field
-        = f.label :body
-        %br/
-        = f.text_area :body, class: "ckeditor"
-      .field
-        = f.label "feature image"
-        %br/
-        = f.file_field :image
-      .field
-        = f.label "board category"
-        %br/
-        = f.select :category, [["Economics", "Economics"], ["Politics", "Politics"], ["Global Issues", "Global Issues"], ["Business", "Business"]],  :include_blank => true
+/ %article
+.row-fluid
+  .span6
+    %h5 Make A New Board
+    = form_for @board do |f|
       = hidden_field_tag "board[user_id]", current_user.id
-      .actions
-        = f.submit "Post"
-      = link_to "go to boards index", boards_path
+      = f.text_field :title, class: "span12", placeholder: "Title"
+      = f.file_field :image, class: "span12"
+      = f.select :category, [["Economics", "economics"], ["Politics", "politics"], ["Global Issues", "global issues"], ["Business", "business"]], class: "span12", :prompt => "select one category"
+      = f.text_area :body, class: "ckeditor span12", placeholder: "Body"
+      %button.btn.btn-primary{:type => "submit"} Submit
+  .span5.offset1
+    %h5 You Need To...
+    .media
+      / .social-icons.sicon-white.pull-left
+      / .pull-left
+      /   %a.sicon-place{:href => "#"}
+      /     %i.fa.fa-eye
+      .media-body.smallFontBy08
+        1. Deside your Title
+    .media
+      / .social-icons.sicon-white.pull-left
+      /   %a.sicon-mail{:href => "#"}
+      /     %i email
+      .media-body.smallFontBy08
+        2. Select Feature Image of Your Board
+    .media
+      / .social-icons.sicon-white.pull-left
+      /   %a.sicon-clock{:href => "#"}
+      /     %i Time zone
+      .media-body.smallFontBy08
+        3. Select Your Board Category
+    .media
+      .media-body.smallFontBy08
+        4. Write your Opinion!
+    %br/
+    %br/
+    %br/
+    %h5 Link
+    .media
+      .media-body.smallFontBy08
+        = link_to "Back To Boards Index Page", boards_path
+    .media
+      .media-body.smallFontBy08
+        = link_to "Back To Top", root_path  
+      / %a.sicon-linkedin{:href => "#"}
+      /   %i LinkedIn
+      / %a.sicon-youtube{:href => "#"}
+      /   %i Youtube
+      / %a.sicon-pinterest{:href => "#"}
+      /   %i Pinterest
+/ End Article
 %script{:src => "//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"}
 %script CKEDITOR.replace( 'ckeditor' );

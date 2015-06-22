@@ -11,19 +11,20 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
     @lates_boards = Board.all.order("created_at DESC").limit(5)
     @opinions = @board.opinions
   end
 
   # GET /boards/new
   def new
-    @user = current_user
-    # @board = Board.new
+    # @user = current_user
+    @board = Board.new
   end
 
   # GET /boards/1/edit
   def edit
+    # @user = current_user
   end
 
   # POST /boards

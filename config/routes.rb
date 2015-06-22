@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+devise_for :users, :controllers => {
+  :sessions      => "users/sessions",
+  :registrations => "users/registrations",
+  :passwords     => "users/passwords"
+}
   root 'about#index'
   resources :boards
   post '/boards_search' => 'boards#search'

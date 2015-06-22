@@ -181,6 +181,11 @@ $(document).ready(function(){
         interval: 5000,
         pause: "hover"
     });
+
+    // $('#twitterfeed-slider').carousel({
+    //     interval: 5000,
+    //     pause: "hover"
+    // });
 });
 
 

@@ -1,35 +1,103 @@
-%body
-  #page-information.pages.black-bg.white.page-information
-    .container
-      / Header
-      %header
-        %h4.line-divider Information
-        .row
-          .span8.offset2
-            %p
-              Please contact us !!
-      / End Header
-      / Start Article
-      %article
-        .row-fluid
-          / End Contact form
-          / Contact information
-          .span5.offset1
-            %h5 Contact Us
-            .media
-              .social-icons.sicon-white.pull-left
-                %i Email
-              .media-body.smallFontBy08
-                info@nextleaders.net
-            %h5 Get social
-            .social-icons.sicon-white.bordered
-              = link_to "https://www.facebook.com/groups/151692711639352/", class: "sicon-facebook" do
-                %i
-              = link_to "#", class: "sicon-twitter" do
-                %i
-          / End Contact information
-      / End Article
-    / Background map image
-    #map-image
-      / <img src="assets/images/pages/contact/map_bck.jpg" alt="Treble">
-  / END PAGE | CONTACT
+/ %body
+/   #page-information.pages.black-bg.white.page-information
+/     .container
+/       / Header
+/       %header
+/         %h4.line-divider Information
+/         .row
+/           .span8.offset2
+/             %p
+/               Please contact us !!
+/       / End Header
+/       / Start Article
+/       %article
+/         .row-fluid
+/           / End Contact form
+/           / Contact information
+/           .span5.offset1
+/             %h5 Contact Us
+/             .media
+/               .social-icons.sicon-white.pull-left
+/                 %i Email
+/               .media-body.smallFontBy08
+/                 info@nextleaders.net
+/             %h5 Get social
+/             .social-icons.sicon-white.bordered
+/               = link_to "https://www.facebook.com/groups/151692711639352/", class: "sicon-facebook" do
+/                 %i
+/               = link_to "#", class: "sicon-twitter" do
+/                 %i
+/           / End Contact information
+/       / End Article
+/     / Background map image
+/     #map-image
+/       / <img src="assets/images/pages/contact/map_bck.jpg" alt="Treble">
+/   / END PAGE | CONTACT
+/ PAGE | CONTACT
+#page-contact.pages.black-bg.white.page-contact
+  .container
+    / Header
+    %header
+      %h4.line-divider Contact
+      %h1 Say hello!
+      .row
+        .span8.offset2
+          %p
+            We like to create things with all of you. Feel free to say hello! We'll respond as soon as possible.
+    / End Header
+    / Start Article
+    %article
+      .row-fluid
+        .span6
+          %h5 Drop Us A Line
+          %form
+            %input.span12{:placeholder => "Title", :type => "text"}
+            %input.span12{:placeholder => "Email", :type => "text"}
+            %textarea.span12{:rows => "10", :placeholder => "body"}
+            %button.btn.btn-primary{:type => "submit"} Submit
+        .span5.offset1
+          %h5 Meet Us
+          / .media
+          /   .social-icons.sicon-white.pull-left
+          /     %a.sicon-phone{:href => "#"}
+          /       %i Phone
+          /   .media-body.smallFontBy08
+          /     (+1) 502 964-0393 | (+1) 502 964-0393 (FAX)
+          .media
+            .social-icons.sicon-white.pull-left
+              %a.sicon-place{:href => "#"}
+                %i Location
+            .media-body.smallFontBy08
+              Tokyo, JAPAN 
+          .media
+            .social-icons.sicon-white.pull-left
+              %a.sicon-mail{:href => "#"}
+                %i email
+            .media-body.smallFontBy08
+              mail@globalnextleaders.com
+          .media
+            .social-icons.sicon-white.pull-left
+              %a.sicon-clock{:href => "#"}
+                %i Time zone
+            .media-body.smallFontBy08
+              UTC / GMT +9
+          %br/
+          %br/
+          %br/
+          %h5 Get social
+          .social-icons.sicon-white.bordered
+            %a.sicon-facebook{:href => "#"}
+              %i Facebook
+            %a.sicon-twitter{:href => "#"}
+              %i Twitter
+            / %a.sicon-linkedin{:href => "#"}
+            /   %i LinkedIn
+            / %a.sicon-youtube{:href => "#"}
+            /   %i Youtube
+            / %a.sicon-pinterest{:href => "#"}
+            /   %i Pinterest
+    / End Article
+  / Background map image
+  #map-image
+    %img{:src => "../../assets/images/pages/contact/map_bck.jpg"}
+/ END PAGE | CONTACT

@@ -1,5 +1,11 @@
-%h1 Editing board
-= render 'form'
-= link_to 'Show', @board
-|
-= link_to 'Back', boards_path
+#page-boards.pages.page-boards
+  .container
+    %header
+      %h4.line-divider Boards
+      %h1 Editing Board
+    %article
+      = render 'form'
+    %footer
+      = link_to 'Show', @board
+      = link_to 'Cancellation', boards_path
+      = link_to 'Delete this Board', board_path(@board), method: :delete, data: {confirm: "You really delete this Board?"}
