@@ -1,5 +1,5 @@
 class Blog < ActiveRecord::Base
- has_many :comments
+ has_many :comments, dependent: :destroy
  belongs_to :user
   def set_image(file)
     if !file.nil?

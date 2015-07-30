@@ -10,6 +10,9 @@
           #write-replay.write-comment
             = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
               .field.signin-form
+                = f.label :username
+                = f.text_field :username, autofocus: true, class: "form-control"
+              .field.signin-form
                 = f.label :email
                 = f.email_field :email, autofocus: true, class: "form-control"
               .field.signin-form
@@ -21,6 +24,7 @@
                   = f.label :remember_me
               .actions.signin-form
                 = f.submit "Log in", class: "btn btn-primary btn-lg"
+              / = link_to image_tag('facebook_login.png'), user_omniauth_authorize_path(:facebook)
       .row-fluid
         .span12.center
           = render "users/shared/links"

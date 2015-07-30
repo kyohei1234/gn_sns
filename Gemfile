@@ -43,6 +43,8 @@ gem 'better_errors'
 gem 'binding_of_caller'
 # デバイス
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'therubyracer'
 
 group :doc do

@@ -1,5 +1,5 @@
 class Friend < ActiveRecord::Base
-  has_many :responses
+  has_many :responses, dependent: :destroy
   belongs_to :user
   def set_image(file)
     if !file.nil?

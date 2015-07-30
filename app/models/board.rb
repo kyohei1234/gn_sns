@@ -1,5 +1,5 @@
 class Board < ActiveRecord::Base
-	has_many :opinions
+	has_many :opinions, dependent: :destroy
   belongs_to :user
   def set_image(file)
     if !file.nil?

@@ -9,25 +9,45 @@
           = devise_error_messages!
           %ul.project-details-list
             %li
+              %h6 user_name *required
+              .project-terms
+                = f.text_field :username, autofocus: true, class: "form-control"
+            %li
               %h6 email *required
               .project-terms
                 = f.text_field :email, autofocus: true, class: "form-control"
             %li
-              %h6
-                password
-                %i (leave blank if you don't want to change it)
+              %h6 GNLF Participation Year
               .project-terms
-                = f.password_field :password, autocomplete: "off", class: "form-control"
+                = f.text_field :email, autofocus: true, class: "form-control"
             %li
-              %h6 password again *required
+              %h6 email *required
               .project-terms
-                = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+                = f.text_field :email, autofocus: true, class: "form-control"
             %li
-              %h6
-                current password *
-                %i (we need your current password to confirm your changes)
-              .field
-                = f.password_field :current_password, autocomplete: "off", class: "form-control"
+              %h6 email *required
+              .project-terms
+                = f.text_field :email, autofocus: true, class: "form-control"
+            %li
+              %h6 email *required
+              .project-terms
+                = f.text_field :email, autofocus: true, class: "form-control"
+            / %li
+            /   %h6
+            /     password
+            /     %i (leave blank if you don't want to change it)
+            /   .project-terms
+            /     = f.password_field :password, autocomplete: "off", class: "form-control"
+            / %li
+            /   %h6 password again *required
+            /   .project-terms
+            /     = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+            / %li
+            /   %h6
+            /     current password *
+            /     %i (we need your current password to confirm your changes)
+            /   .field
+            /     = f.password_field :current_password, autocomplete: "off", class: "form-control"
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           %div
             Currently waiting confirmation for: #{resource.unconfirmed_email}
